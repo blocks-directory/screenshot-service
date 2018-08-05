@@ -13,7 +13,7 @@ exports.handler = async (event) => {
 
     const browser = await setup.getBrowser({ headless: true })
     const page = await browser.newPage()
-    page.setViewport({ width, height })
+    page.setViewport({ width: Number(width), height: Number(height) })
     await page.goto(url)
     const imageBuffer = await page.screenshot()
 

@@ -87,5 +87,3 @@ jspm_packages
 .serverless
 .idea
 package-lock.json
-headless_shell
-headless_shell*

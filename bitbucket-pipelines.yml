@@ -1,0 +1,12 @@
+image: node:latest
+
+pipelines:
+  branches:
+    master:
+      - step:
+          caches:
+            - node
+          script:
+            - yarn
+            - yarn lint:fix
+            - yarn deploy

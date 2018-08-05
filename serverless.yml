@@ -1,0 +1,41 @@
+service: screenshot-service
+
+provider:
+  name: aws
+  region: eu-central-1
+  stage: prod
+  runtime: nodejs8.10
+  memorySize: 1536
+  timeout: 180
+  environment:
+    LOCAL: ${env:LOCAL}
+
+functions:
+  png:
+    handler: src/index.handler
+    events:
+    - http:
+        path: /
+        method: get
+
+package:
+  exclude:
+  - node_modules/.cache/**
+  - .cache/**
+  - .idea/**
+  - yarn.lock
+  - headless_shell
+  - package-lock.json
+
+plugins:
+  - serverless-hooks-plugin
+  - serverless-apigw-binary
+  - serverless-offline
+
+custom:
+  hooks:
+    package:initialize:
+    - yarn package:initialize
+  apigwBinary:
+    types:
+    - '*/*'

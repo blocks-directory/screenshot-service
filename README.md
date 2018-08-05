@@ -7,3 +7,5 @@ In this repo I used headless_shell-67.0.3361.0.tar.gz as chrome binary for puppe
 For local development puppeteer will be downloaded with binaries.
 
 Demo available [here](https://cnuzre0zkf.execute-api.eu-central-1.amazonaws.com/prod?url=http://google.com&width=1024&height=768)
+
+![4zANq1zfq06J29.jpg](https://s3.eu-central-1.amazonaws.com/bb-image-drai/prod.png)

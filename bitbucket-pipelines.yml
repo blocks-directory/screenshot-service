@@ -7,6 +7,6 @@ pipelines:
           caches:
             - node
           script:
-            - yarn
+            - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn
             - yarn lint:fix
             - yarn deploy

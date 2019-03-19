@@ -2,12 +2,12 @@ const setup = require('./browser/setup')
 
 exports.handler = async (event) => {
   try {
-    const { url, width = 1500, height = 900 } = event.queryStringParameters
+    const { url, width = 1500, height = 900 } = event.queryStringParameters || {}
 
     if (!url) {
       return {
         statusCode: 400,
-        body: { massage: 'you should specify page URL' },
+        body: JSON.stringify({ massage: 'you should specify page URL' }),
       }
     }
 
@@ -24,9 +24,10 @@ exports.handler = async (event) => {
       headers: { 'Content-Type': 'image/png' },
     }
   } catch (e) {
+    console.log(e)
     return {
       statusCode: 500,
-      body: { massage: 'Something going wrong on backend side' },
+      body: JSON.stringify({ massage: 'Something going wrong on backend side' }),
     }
   }
 }

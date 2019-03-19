@@ -7,6 +7,7 @@
     "package:initialize": "cross-env PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install --production",
     "deploy": "sls deploy",
     "deploy:function": "sls deploy function --function png --verbose",
+    "logs": "sls logs --function png --tail",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },

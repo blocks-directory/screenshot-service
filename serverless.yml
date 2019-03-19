@@ -5,7 +5,7 @@ provider:
   region: eu-central-1
   stage: prod
   runtime: nodejs8.10
-  memorySize: 1536
+  memorySize: 3008
   timeout: 180
   environment:
     LOCAL: ${env:LOCAL}

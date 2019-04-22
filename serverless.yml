@@ -12,30 +12,17 @@ provider:
 
 functions:
   png:
-    handler: src/index.handler
+    handler: src/handler.default
     events:
     - http:
         path: /
         method: get
 
-package:
-  exclude:
-  - node_modules/.cache/**
-  - .cache/**
-  - .idea/**
-  - yarn.lock
-  - headless_shell
-  - package-lock.json
-
 plugins:
-  - serverless-hooks-plugin
   - serverless-apigw-binary
   - serverless-offline
 
 custom:
-  hooks:
-    package:initialize:
-    - yarn package:initialize
   apigwBinary:
     types:
     - '*/*'

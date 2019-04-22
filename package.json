@@ -1,10 +1,9 @@
 {
   "name": "screenshot-service",
-  "version": "0.1.0",
-  "description": "Screenshot service based on Puppeteer and running on AWS Lambda",
+  "version": "0.14.0",
+  "description": "Screenshot service based on Puppeteer",
   "scripts": {
-    "start": "yarn --force && cross-env LOCAL=1 serverless offline start",
-    "package:initialize": "cross-env PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install --production",
+    "start": "serverless offline start --dontPrintOutput",
     "deploy": "sls deploy",
     "deploy:function": "sls deploy function --function png --verbose",
     "logs": "sls logs --function png --tail",
@@ -12,8 +11,8 @@
     "lint:fix": "eslint ./src --fix"
   },
   "dependencies": {
-    "puppeteer": "^1.6.2",
-    "tar": "^4.4.6"
+    "chrome-aws-lambda": "^1.14.0",
+    "puppeteer-core": "^1.14.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",

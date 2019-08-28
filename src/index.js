@@ -24,6 +24,7 @@ exports.handler = async (event) => {
       headers: { 'Content-Type': 'image/png' },
     }
   } catch (e) {
+    // eslint-disable-next-line
     console.log(e)
     return {
       statusCode: 500,

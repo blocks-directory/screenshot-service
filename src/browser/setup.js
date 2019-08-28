@@ -29,11 +29,11 @@ const existsExecutableChrome = () => new Promise((resolve) => {
 
 const setupLocalChrome = () => new Promise((resolve, reject) => {
   fs.createReadStream(config.localChromePath)
-    .on('error', err => reject(err))
+    .on('error', (err) => reject(err))
     .pipe(tar.x({
       C: config.setupChromePath,
     }))
-    .on('error', err => reject(err))
+    .on('error', (err) => reject(err))
     .on('end', () => resolve())
 })
 

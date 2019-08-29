@@ -4,7 +4,7 @@ provider:
   name: aws
   region: eu-central-1
   stage: prod
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   memorySize: 3008
   timeout: 180
   environment:

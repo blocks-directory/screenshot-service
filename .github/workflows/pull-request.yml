@@ -13,3 +13,4 @@ jobs:
       - uses: actions/setup-node@v1
       - run: yarn
       - run: yarn lint
+      - run: yarn tsc

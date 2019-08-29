@@ -4,7 +4,7 @@ provider:
   name: aws
   region: eu-central-1
   stage: prod
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   memorySize: 3008
   timeout: 180
   environment:
@@ -12,30 +12,26 @@ provider:
 
 functions:
   png:
-    handler: src/index.handler
+    handler: src/handler.default
     events:
     - http:
         path: /
         method: get
 
-package:
-  exclude:
-  - node_modules/.cache/**
-  - .cache/**
-  - .idea/**
-  - yarn.lock
-  - headless_shell
-  - package-lock.json
-
 plugins:
-  - serverless-hooks-plugin
   - serverless-apigw-binary
   - serverless-offline
+  - serverless-webpack
 
 custom:
-  hooks:
-    package:initialize:
-    - yarn package:initialize
+  serverless-offline:
+    port: 4000
+    noTimeout: true
   apigwBinary:
     types:
     - '*/*'
+  webpack:
+    includeModules:
+      forceExclude:
+        - puppeteer
+    packager: 'yarn'

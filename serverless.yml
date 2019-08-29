@@ -21,8 +21,17 @@ functions:
 plugins:
   - serverless-apigw-binary
   - serverless-offline
+  - serverless-webpack
 
 custom:
+  serverless-offline:
+    port: 4000
+    noTimeout: true
   apigwBinary:
     types:
     - '*/*'
+  webpack:
+    includeModules:
+      forceExclude:
+        - puppeteer
+    packager: 'yarn'

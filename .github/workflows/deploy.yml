@@ -11,9 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
-      - run: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn
+      - run: yarn
       - run: yarn lint
-      - run: yarn deploy
+      - run: yarn tsc
+      - run: yarn deploy:function
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}

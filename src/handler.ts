@@ -1,9 +1,11 @@
-const chromium = require('chrome-aws-lambda')
-const puppeteer = require('puppeteer-core')
+import chromium from 'chrome-aws-lambda'
 
-exports.default = async (event) => {
+import { getPuppeteer } from './puppeteer.util'
+
+export default async (event: any) => {
+  const puppeteer = getPuppeteer()
   try {
-    const { url, width = 1500, height = 900 } = event.queryStringParameters || {}
+    const { url = '', width = 1500, height = 900 } = event.queryStringParameters || {}
 
     if (!url) {
       return {
@@ -16,7 +18,7 @@ exports.default = async (event) => {
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
       executablePath: await chromium.executablePath,
-      headless: chromium.headless,
+      headless: true,
     })
 
     const page = await browser.newPage()

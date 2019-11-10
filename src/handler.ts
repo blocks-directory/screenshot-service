@@ -7,7 +7,7 @@ export default async (event: any) => {
   try {
     const { url = '', width = 1500, height = 900 } = event.queryStringParameters || {}
 
-    if (!url) {
+    if (!url || !url.startsWith('http')) {
       return {
         statusCode: 400,
         body: JSON.stringify({ massage: 'you should specify page URL' }),

@@ -6,13 +6,15 @@ Screenshot service running Headless-Chrome by [Puppeteer](https://github.com/Goo
 
 Demo available [here](https://iv9yprrg22.execute-api.eu-central-1.amazonaws.com/prod?url=http://google.com&width=1024&height=768)
 
-![demo](.github/demo.png)
+✔️ 5 minutes to deploy
 
 ✔️ No binary checked-in
 
 ✔️ No lambda layer required
 
 ✔️ Runs locally with serverless-offline
+
+![demo](.github/demo.png)
 
 
 Locally service works with `puppeteer`, packaged version contains uses `puppeteer-core` instead. With this workaround service able to work locally on any environment and at the same time have acceptable build size (~38Mb)

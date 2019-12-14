@@ -1,5 +1,6 @@
 import chromium from 'chrome-aws-lambda'
 
+// eslint-disable-next-line import/extensions
 import { getPuppeteer } from './puppeteer.util'
 
 export default async (event: any) => {

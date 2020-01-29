@@ -1,6 +1,6 @@
 ## Puppeteer AWS Lambda screenshot service
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-![Deploy Latest Master](https://github.com/EugeneDraitsev/screenshot-service/workflows/Deploy%20Latest%20Master/badge.svg)
+![Deploy Latest Master](https://github.com/blocks-directory/screenshot-service/workflows/Deploy%20Latest%20Master/badge.svg?branch=master)
 
 Screenshot service running Headless-Chrome by [Puppeteer](https://github.com/GoogleChrome/puppeteer) on AWS Lambda.
 

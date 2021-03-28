@@ -39,7 +39,7 @@
     "serverless-offline": "^6.9.0",
     "serverless-webpack": "^5.4.0",
     "typescript": "^4.2.3",
-    "webpack": "^5.28.0",
+    "webpack": "5.0.0-beta.14",
     "webpack-node-externals": "^2.5.2"
   },
   "license": "MIT"

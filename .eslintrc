@@ -1,13 +1,10 @@
 {
-  "extends": ["airbnb-base"],
+  "extends": ["airbnb-base", "prettier"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "jest"],
   "env": {
     "browser": true,
     "jest/globals": true
-  },
-  "parserOptions": {
-    "project": "./tsconfig.json"
   },
   "settings": {
     "import/resolver": {
@@ -15,15 +12,5 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
       }
     }
-  },
-  "rules": {
-    "semi": ["error", "never"],
-    "max-len": ["error", 120],
-    "object-curly-newline": ["error", {"consistent": true}],
-    "@typescript-eslint/no-unused-vars": "error",
-    "operator-linebreak": "off",
-    "implicit-arrow-linebreak": "off",
-    "import/prefer-default-export": "off",
-    "newline-per-chained-call": "off"
   }
 }

@@ -6,7 +6,8 @@ import { getPuppeteer } from './puppeteer.util'
 export default async (event: any) => {
   const puppeteer = getPuppeteer()
   try {
-    const { url = '', width = 1500, height = 900 } = event.queryStringParameters || {}
+    const params = event.queryStringParameters || {}
+    const { url = '', width = 1500, height = 900 } = params
 
     if (!url || !url.startsWith('http')) {
       return {
@@ -34,11 +35,11 @@ export default async (event: any) => {
       headers: { 'Content-Type': 'image/png' },
     }
   } catch (e) {
-    // eslint-disable-next-line
-    console.log(e)
     return {
       statusCode: 500,
-      body: JSON.stringify({ massage: 'Something going wrong on backend side' }),
+      body: JSON.stringify({
+        massage: 'Something going wrong on backend side',
+      }),
     }
   }
 }

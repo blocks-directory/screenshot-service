@@ -10,4 +10,5 @@ try {
   console.log('local puppeteer is missing')
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export const getPuppeteer = () => puppeteerLocal || puppeteerCore
